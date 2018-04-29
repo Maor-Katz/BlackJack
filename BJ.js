@@ -36,7 +36,6 @@ buttonHit.addEventListener('click', function() {
 });
 buttonStay.addEventListener('click', function() {
   gameOver = true;
-  debugger;
   checkGameEnd();
   showStatus();
 });
@@ -118,7 +117,6 @@ function checkGameEnd() {
       updateScore();
     }
   }
-  debugger;
   if (playerScore > 21) {
     dealerWon = true;
     playerWon = false;
@@ -127,20 +125,17 @@ function checkGameEnd() {
     playerWon = true;
     dealerWon = false;
     gameOver = true;
-    debugger;
   } else if (playerScore === 21) {
     playerWon = true;
     dealerWon = false;
     gameOver = true;
   } else if (gameOver) {
     if (playerScore > dealerScore) {
-      debugger;
       playerWon = true;
       dealerWon = false;
     } else {
       dealerWon = true;
       playerWon = false;
-      debugger;
     }
   }
 }
@@ -162,7 +157,6 @@ function showStatus() {
     'Dealer Has: \n' + dealerCardString + '(score ' + dealerScore + ') \n \n' +
     'player Has: \n' + playerCardString + '(score ' + playerScore + ') \n \n';
   if (gameOver) {
-    debugger;
     if (playerWon) {
       winlose.innerText = 'YOU Win!!!'
     }
